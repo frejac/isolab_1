@@ -2,8 +2,8 @@ var app = require('express')()
   , server = require('http').createServer(app)
   , io = require('socket.io').listen(server);
 
-// Start listening on port 8080
-server.listen(8080);
+// Start listening on port
+server.listen(10151);
 
 // Serve the index.html file
 app.get('/', function (req, res) {
