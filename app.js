@@ -19,16 +19,56 @@ io.sockets.on('connection', function (client) {
 		console.log(data);
 		// Sends a message to all connected clients
 		found = false;
+		taken = false;
+		okPlayer = false;
+		player = null;
+		for (i = 0; i < players.length; i++) {
+			if (players[i].name == data.nick) {
+				okPlayer = true;
+				player = players[i];
+			}
+		}
+
+		if (!okPlayer) {
+			io.sockets.emit('message', { nick: data.nick, message: "We do not know you. You are out!" });
+			return;
+		}
+
 		for (i = 0; i < items.length; i++) {
 			if (items[i].name.toLowerCase() == data.message.toLowerCase()) {
 				found = true;
-				io.sockets.emit('message', { nick: data.nick.value, message: "FOUND: " + data.message });
+				for (j = 0; j < players.length; j++) {
+					if (contains(players[j].items, data.message.toLowerCase())) {
+						io.sockets.emit('message', { nick: data.nick, message: data.message + " is already taken by " + players[j].name });
+						taken = true;
+					}
+				}
+				if (!taken) {
+					io.sockets.emit('message', { nick: data.nick, message: "FOUND: " + data.message });
+					player.items.push(data.message.toLowerCase());
+				}
 			}
 		}
 		if (!found)
-			io.sockets.emit('message', { nick: data.nick.value, message: "You is out: " + data.message + " is not in my list" });
+			io.sockets.emit('message', { nick: data.nick, message: "You is out: " + data.message + " is not in my list" });
 	});
 });
+
+function contains(a, obj) {
+    for (var i = 0; i < a.length; i++) {
+        if (a[i] === obj) {
+            return true;
+        }
+    }
+    return false;
+}
+
+var players = [
+	{ name: "Erik", items: [] },
+	{ name: "Karin", items: [] },
+	{ name: "Erica", items: [] },
+	{ name: "Fredrik", items: [] }
+];
 
 //the Items
 var items = [
