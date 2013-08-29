@@ -1,0 +1,52 @@
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io.connect('http://localhost:10151');
+
+//  // Called when client is connected to server
+//  socket.on('connect', function () {
+
+//  	// Called when client receives message from server
+//  	socket.on('message', function (data) {
+//  		// Log to browser console
+//  		console.log(data);
+//  		// Add the message to the ul list
+//  		var li = document.createElement('li');
+//  		li.innerHTML = data.nick + " says: " + data.message;
+//  		document.getElementById('chat').appendChild(li);
+//  		alert(data.status);
+//  	});
+
+//  });
+  
+  function send_message () {
+
+  	var list = Lists[$('#listselect').val()];
+
+    // Send the message to the server
+    socket.emit('listselect', list);
+
+    return false;
+  }
+
+</script>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
+<script src="http://isolabs.isotop.se/code/1_multiplayer/team5/isolab_1/Lists.js"></script>
+<script type="text/javascript">
+	$(document).ready(function () {
+		$.each(Lists, function (i, v) {
+			$('#listselect')
+				.append($('<option>', { value: i })
+				.text(v.name));
+		});
+	});
+</script>
+
+<form onsubmit="return send_message();" action="">
+
+  <select name="listselect" id="listselect"></select>
+  <input type="submit" value="Send" />
+
+</form>
+
+<ul id="chat"></ul>
