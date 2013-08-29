@@ -1,37 +1,8 @@
-var app = require('express')()
-  , server = require('http').createServer(app)
-  , io = require('socket.io').listen(server);
-
-// Start listening on port
-server.listen(10151);
-
-// Serve the index.html file
-app.get('/', function (req, res) {
-  res.sendfile(__dirname + '/index.html');
-});
-
-
-// Called when client connects
-io.sockets.on('connection', function (client) {
-	// Called when receving 'message' from the client
-	client.on('message', function (data) {
-		// Log data to the console
-		console.log(data);
-		// Sends a message to all connected clients
-		found = false;
-		for (i = 0; i < items.length; i++) {
-			if (items[i].name.toLowerCase() == data.message.toLowerCase()) {
-				found = true;
-				io.sockets.emit('message', { nick: data.nick.value, message: "FOUND: " + data.message });
-			}
-		}
-		if (!found)
-			io.sockets.emit('message', { nick: data.nick.value, message: "You is out: " + data.message + " is not in my list" });
-	});
-});
-
-//the Items
-var items = [
+{
+  "list": {
+    "name": "Huvudstäder i Afrika",
+    "image": "http://amref.se/wp-content/uploads/2011/12/jorden.png",
+    "item": [
       {
         "name": "Alger",
         "metadata": [
@@ -659,4 +630,6 @@ var items = [
           }
         ]
       }
-    ];
+    ]
+  }
+}
