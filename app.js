@@ -127,8 +127,8 @@ io.sockets.on('connection', function (client) {
 		}
 
 		if (playersLeft == 1) {
-			for (i = 0; i < players.length; i++) {
-				if (!players[i].out) {
+			for (i = 0; i < game.players.length; i++) {
+				if (game.players[i].active) {
 					sendGameWithStatus("We have a winner: " + game.players[i].nick);
 				}
 			}
