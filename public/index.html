@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="http://localhost:10151/socket.io/socket.io.js"></script>
+	<script type="text/javascript" src="/gui/js/vendor/jquery-1.10.2.min.js"></script>
+	<!--<script src="/gui/js/socket_io.js"></script>-->
+	<script src="/gui/js/app.js"></script>
+	<link rel="stylesheet" type="text/css" href="/gui/css/app.css">
+</head>
+<body>
+
+	<div class="app">
+
+		<div class="intro-screen"></div>
+
+		<div class="join-game-screen">
+			<form action="">
+				<input type="text" value="kanske" name="nickname" id="nickname" placeholder="nickname" />
+				<div class="submit-name">
+					join
+				</div>
+			</form>
+		</div>
+
+		<div class="game-screen inactive">
+			<!--<div class="nick-name"></div>-->
+			<div class="player-list"></div>
+
+			<form class="answer-form" action=""></form>
+				<input type="text" value="saying something..." name="message" id="message" placeholder="answer" />
+			</form>
+			<div class="submit-answer">
+				send answer
+			</div>
+			<div class="start-game">
+				START GAME
+			</div>
+			<div class="list-info"></div>
+
+			<ul id="chat"></ul>
+		</div>
+
+		<div class="end-screen"></div>
+	</div>
+
+
+	<script type="text/Javascript">
+
+		$(document).ready(function () {
+
+			var	gameApp = new App.GameScreen();
+				gameApp.init();
+		});
+
+	</script>
+
+</body>
+</html>
