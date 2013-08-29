@@ -22,7 +22,12 @@ io.sockets.on('connection', function (client) {
 		taken = false;
 		okPlayer = false;
 		player = null;
+		playersLeft = 0;
+
 		for (i = 0; i < players.length; i++) {
+			if (!players[i].out)
+				playersLeft++;
+
 			if (players[i].name == data.nick) {
 				okPlayer = true;
 				player = players[i];
@@ -30,7 +35,17 @@ io.sockets.on('connection', function (client) {
 		}
 
 		if (!okPlayer) {
-			io.sockets.emit('message', { nick: data.nick, message: "We do not know you. You are out!" });
+			io.sockets.emit('message', { nick: "Computer", message: "We do not know you. You are out!" });
+			return;
+		}
+
+		if (playersLeft == 1) {
+			io.sockets.emit('message', { nick: "Computer", message: "How dit it happen!" });
+			return;
+		}
+
+		if (player.out) {
+			io.sockets.emit('message', { nick: "Computer", message: player.name + " you are already OUT" });
 			return;
 		}
 
@@ -39,18 +54,32 @@ io.sockets.on('connection', function (client) {
 				found = true;
 				for (j = 0; j < players.length; j++) {
 					if (contains(players[j].items, data.message.toLowerCase())) {
-						io.sockets.emit('message', { nick: data.nick, message: data.message + " is already taken by " + players[j].name });
+						io.sockets.emit('message', { nick: data.nick, message: data.message + ", but that is already taken by " + players[j].name + "." + player.name + " is out." });
+						player.out = true;
 						taken = true;
+						playersLeft--;
 					}
 				}
 				if (!taken) {
-					io.sockets.emit('message', { nick: data.nick, message: "FOUND: " + data.message });
+					io.sockets.emit('message', { nick: data.nick, message: data.message + ". Great!" });
 					player.items.push(data.message.toLowerCase());
 				}
 			}
 		}
-		if (!found)
-			io.sockets.emit('message', { nick: data.nick, message: "You is out: " + data.message + " is not in my list" });
+		if (!found) {
+			io.sockets.emit('message', { nick: data.nick, message: data.message + ", but that is not int the list. " + player.name + " is out." });
+			player.out = true;
+			playersLeft--;
+		}
+
+		if (playersLeft == 1) {
+			for (i = 0; i < players.length; i++) {
+				if (!players[i].out) {
+					io.sockets.emit('message', { nick: "Computer", message: "We have a winner: " + players[i].name });
+				}
+
+			}
+		}
 	});
 });
 
@@ -64,10 +93,10 @@ function contains(a, obj) {
 }
 
 var players = [
-	{ name: "Erik", items: [] },
-	{ name: "Karin", items: [] },
-	{ name: "Erica", items: [] },
-	{ name: "Fredrik", items: [] }
+	{ name: "Erik", out : false, items: [] },
+	{ name: "Karin", out : false, items: [] },
+	{ name: "Erica", out : false , items: [] },
+	{ name: "Fredrik", out : false , items: []}
 ];
 
 //the Items
