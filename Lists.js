@@ -63,7 +63,7 @@
 	},
   {
   	"name": "Delstater i USA",
-  	"item": [
+  	"items": [
       { "name": "Alabama" },
       { "name": "Alaska" },
       { "name": "Arizona" },
@@ -118,7 +118,7 @@
   },
    {
    	"name": "Reserverade ord i C#",
-   	"item": [
+   	"items": [
       { "name": "abstract" },
       { "name": "as" },
       { "name": "base" },
@@ -200,7 +200,7 @@
    },
 	 {
 	 	"name": "Tunnelbanestationer",
-	 	"item": [
+	 	"items": [
       { "name": "Abrahamsberg" },
       { "name": "Akalla" },
       { "name": "Alby" },
@@ -306,7 +306,7 @@
 	 },
 	{
 		"name": "Oscar-winning movies",
-		"item": [
+		"items": [
       { "name": "Argo" },
       { "name": "The Artist" },
       { "name": "The King's Speech" },
