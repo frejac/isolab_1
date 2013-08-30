@@ -3,22 +3,23 @@
   var socket = io.connect('http://isolabs.isotop.se:10151');
 
   //  // Called when client is connected to server
-socket.on('connect', function () {
+  socket.on('connect', function () {
 
-//Called when client receives message from server
-socket.on('message', function (data) {
- 	$(".stats").html("");
-	$.each(data.players, function (i, v) {
-		var div = $('div');
-		div.html(v.nick + "<br/>");
-		$.each(v.items, function (i, v) {
-			div.append("&nbsp;&nbsp;" + v + "<br/>");
-		});
-		$(".stats").append(div);
-	});
-});
+  	//Called when client receives message from server
+  	socket.on('message', function (data) {
+  		console.log(data); 
+//  		$(".stats").html("");
+//  		$.each(data.players, function (i, v) {
+//  			var div = $('div');
+//  			div.html(v.nick + "<br/>");
+//  			$.each(v.items, function (i, v) {
+//  				div.append("&nbsp;&nbsp;" + v + "<br/>");
+//  			});
+//  			$(".stats").append(div);
+//  		});
+  	});
 
-});
+  });
   
   function send_message () {
 
