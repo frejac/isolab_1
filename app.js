@@ -156,7 +156,7 @@ function nextTurn() {
 
 		if (game.players[a].active) {
 			game.turn = a;
-			counter = 30;
+			countdown = 30;
 			break;
 		}
 	}
