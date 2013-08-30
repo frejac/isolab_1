@@ -104,9 +104,6 @@ app.get('/admin', function (req, res) {
  		if (!okPlayer)
  			return sendGameWithStatus("Unknown nick: " + data.nick + ". Get out of here");
 
- 		if (playersLeft == 1)
- 			return sendGameWithStatus("Hm, this is not supposed to happen");
-
  		if (!player.active)
  			return sendGameWithStatus("Forget it, " + player.name + " you are already OUT");
 
@@ -163,14 +160,16 @@ function nextTurn() {
 }
 
 function checkForWinner() {
-	playersLeft = 0;
+	var playersLeft = 0;
 	for (i = 0; i < game.players.length; i++) 
 		if (game.players[i].active)
 			playersLeft++;
-	if (playersLeft == 1) 
-		for (i = 0; i < game.players.length; i++) 
-			if (game.players[i].active) 
-					sendGameWithStatus("We have a winner: " + game.players[i].nick);
+	if (playersLeft == 1)
+		for (i = 0; i < game.players.length; i++)
+			if (game.players[i].active) {
+				sendGameWithStatus("We have a winner: " + game.players[i].nick);
+				game.gameon = false;
+			}
 }
 
 function contains(a, obj) {
