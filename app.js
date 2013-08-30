@@ -100,6 +100,18 @@ io.sockets.on('connection', function (client) {
 		if (!okTurn)
 			return sendGameWithStatus(data.nick + " tried to say something, but its not hens turn");
 
+		for (i = game.turn + 1; i < game.turn + game.players.length; i++) {
+
+			a = i;
+			if (a >= game.players.length)
+				a = a - game.players.length;
+
+			if (game.players[a].active) {
+				game.turn = a;
+				break;
+			}
+		}
+
 		for (i = 0; i < items.length; i++) {
 			if (items[i].name.toLowerCase() == data.message.toLowerCase()) {
 				found = true;
@@ -134,17 +146,7 @@ io.sockets.on('connection', function (client) {
 			}
 		}
 
-		for (i = game.turn + 1; i < game.turn + game.players.length; i++) {
 
-			a = i;
-			if (a >= game.players.length)
-				a = a - game.players.length;
-
-			if (game.players[a].active) {
-				game.turn = a;
-				break;
-			}
-		}
 	});
 });
 

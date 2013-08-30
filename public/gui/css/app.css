@@ -1,3 +1,150 @@
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+hr,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figure,
+figcaption,
+hgroup,
+menu,
+footer,
+header,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+article,
+aside,
+canvas,
+figure,
+figure img,
+figcaption,
+hgroup,
+footer,
+header,
+nav,
+section,
+audio,
+video {
+  display: block;
+}
+a img {
+  border: 0;
+}
+body {
+  font: 15px arial, sans-serif;
+  font-size: 0.875em;
+  color: #ffffff;
+  background-color: #333333;
+}
 .inactive {
   display: none;
+}
+.player-lost {
+  color: #CC0000;
+}
+.player-turn {
+  color: #00CC00;
+}
+.app {
+  background-color: #cfcfcf;
+}
+.centered-box {
+  margin: 0 auto;
+  text-align: center;
+  width: 50%;
+}
+.trucker-status {
+  margin: 1em 1em;
+  color: #5555cc;
+}
+.game-screen .player-list .data-table {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.game-screen .player-list .data-table td:first-child {
+  text-align: right;
+}
+.game-screen .player-list .data-table td {
+  padding: 1em 0.5em;
+  width: 50%;
+  text-align: left;
+}
+.join-game-screen .form {
+  display: inline;
+}
+.join-game-screen .submit-name {
+  display: inline;
+}
+.answer-form .answer-form {
+  display: inline;
+}
+.answer-form .submit-answer {
+  display: inline;
+}
+table,
+tr,
+td {
+  border: 1px solid black;
 }

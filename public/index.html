@@ -10,38 +10,49 @@
 </head>
 <body>
 
-	<div class="app">
+	<div class="app centered-box">
+
+		<div class="trucker-status">
+			Master of the list
+			<div class="list-name"></div>
+		</div>
 
 		<div class="intro-screen"></div>
 
 		<div class="join-game-screen">
-			<form action="">
+			<form class="form" action="">
 				<input type="text" value="kanske" name="nickname" id="nickname" placeholder="nickname" />
-				<div class="submit-name">
-					join
-				</div>
 			</form>
+			<div class="submit-name">
+				<button>join</button>
+			</div>
 		</div>
 
-		<div class="game-screen inactive">
+		<div class="game-screen AAAAinactive">
 			<!--<div class="nick-name"></div>-->
+
 			<div class="player-list"></div>
 
-			<form class="answer-form" action=""></form>
-				<input type="text" value="" name="message" id="message" placeholder="answer" />
-			</form>
-			<div class="submit-answer">
-				send answer
+			<div class="trucker-status">TruckerFun says:</div>
+			<div class="trucker-status" id="chat"></div>
+
+			<div class="answer-form">
+				<form class="answer-form" action=""></form>
+					<input type="text" value="" name="message" id="message" placeholder="answer" />
+				</form>
+				<div class="submit-answer">
+					<button>send answer</button>
+				</div>
 			</div>
 			<div class="start-game">
-				START GAME
+				<button>START GAME</button>
 			</div>
 			<div class="reset-game">
-				RESET GAME
+				<button>RESET GAME</button>
 			</div>
 			<div class="list-info"></div>
 
-			<ul id="chat"></ul>
+
 		</div>
 
 		<div class="end-screen"></div>

@@ -24,6 +24,7 @@ App.GameScreen = (function () {
 			this.playerList 	= $('.player-list');
 			this.startGameButton= $('.start-game');
 			this.listInfo		= $('.list-info');
+			this.listName		= $('.list-name');
 
 			this.bind();
 		},
@@ -55,7 +56,7 @@ App.GameScreen = (function () {
 			var data = this.gameData,
 				listinfo = data.listinfo,
 				players = data.players,
-				html = "",
+				html = '<table class="data-table">',
 				cssClass = "",
 				index=0;
 
@@ -64,18 +65,22 @@ App.GameScreen = (function () {
 
 				cssClass = "";
 				if(value.active == false ) {
-					cssClass = ".player-lost";
+					cssClass = "player-lost";
 				} else if(data.turn === index ) {
-					cssClass = ".player-turn";
+					cssClass = "player-turn";
 				}
 
-				html += ('<li class="'+cssClass+'">'+value.nick+'   '+ value.lastmessage +'</li>');
+				html += ('<tr><td class="'+cssClass+'">'+ value.nick +'</td><td class="'+cssClass+'">'+ value.lastmessage +'</td></tr>');
 
 				index+=1;
 			});
 
+			html+= '</table>';
+
 			this.playerList.html( html );
+
 			this.listInfo.html( listinfo.taken + ' / ' + listinfo.length );
+			this.listName.html( 'Now playing \"' + listinfo.name + '\"' );
 		},
 		//
 		// SERVER RELATED...
@@ -135,15 +140,15 @@ App.GameScreen = (function () {
 					// Called when client receives message from server
 					that.socket.on('message', function (data) {
 						// Log to browser console
-//						console.log('socket on', data);
+						console.log('socket on', data);
 
 						that.gameData = data;
 						that.updateGame();
 						// Add the message to the ul list
-						var li = document.createElement('li');
-							li.innerHTML = data.status;
-//							li.innerHTML = data.nick + " says: " + data.message;
-						document.getElementById('chat').appendChild(li);
+						var span = document.createElement('span');
+						span.innerHTML = data.status;
+//							span.innerHTML = data.nick + " says: " + data.message;
+						document.getElementById('chat').appendChild(span);
 					});
 
 				});
