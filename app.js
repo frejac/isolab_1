@@ -14,7 +14,7 @@ app.get('/admin', function (req, res) {
  	res.sendfile(__dirname + '/listadmin.html');
 });
 
- var countdown = 30;
+ var countdown = 15;
  setInterval(function () {
 
  	if (!game.gameon)
@@ -157,7 +157,7 @@ function nextTurn() {
 
 		if (game.players[a].active) {
 			game.turn = a;
-			countdown = 30;
+			countdown = 15;
 			break;
 		}
 	}
