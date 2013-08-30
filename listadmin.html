@@ -2,10 +2,10 @@
 <script>
   var socket = io.connect('http://isolabs.isotop.se:10151');
 
-//  // Called when client is connected to server
-//  socket.on('connect', function () {
+  //  // Called when client is connected to server
+socket.on('connect', function () {
 
-Called when client receives message from server
+//Called when client receives message from server
 socket.on('message', function (data) {
  	$(".stats").html("");
 	$.each(data.players, function (i, v) {
