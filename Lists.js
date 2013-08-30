@@ -1,635 +1,397 @@
 ﻿var Lists =
 [
 	{ "name": "Huvudstäder i Afrika",
-		"items":
-[
-      {
-      	"name": "Alger",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Luanda",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Porto-Novo",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Gaborone",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Ouagadougou",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Bujumbura",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Bangui",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Djibouti",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Kairo",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Malabo",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Yamoussoukro",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Asmara",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Addis Ababa",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Libreville",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Banjul",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Accra",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Conakry",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Bissau",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Yaoundé",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Praia",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Nairobi",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Moroni",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Brazzaville",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Kinshasa",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Maseru",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Monrovia",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Tripoli",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Antananarivo",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Lilongwe",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Bamako",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Rabat",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Nouakchott",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Port Louis",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Dzaoudzi",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Maputo",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Windhoek",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Niamey",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Abuja",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Saint-Denis",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Kigali",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Jamestown",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "São Tomé",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Dakar",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Victoria",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Freetown",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Mogadishu",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Khartoum",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Mbabane",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Pretoria",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Dodoma",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "N'Djamena",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Lomé",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Tunis",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Kampala",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Al-Ayun",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Lusaka",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      },
-      {
-      	"name": "Harare",
-      	"metadata": [
-          {
-
-          },
-          {
-
-          }
-        ]
-      }
+		"items": [
+      { "name": "Alger" },
+      { "name": "Luanda" },
+      { "name": "Porto-Novo" },
+      { "name": "Gaborone" },
+      { "name": "Ouagadougou" },
+      { "name": "Bujumbura" },
+      { "name": "Bangui" },
+      { "name": "Djibouti" },
+      { "name": "Kairo" },
+      { "name": "Malabo" },
+      { "name": "Yamoussoukro" },
+      { "name": "Asmara" },
+      { "name": "Addis Ababa" },
+      { "name": "Libreville" },
+      { "name": "Banjul" },
+      { "name": "Accra" },
+      { "name": "Conakry" },
+      { "name": "Bissau" },
+      { "name": "Yaoundé" },
+      { "name": "Praia" },
+      { "name": "Nairobi" },
+      { "name": "Moroni" },
+      { "name": "Brazzaville" },
+      { "name": "Kinshasa" },
+      { "name": "Maseru" },
+      { "name": "Monrovia" },
+      { "name": "Tripoli" },
+      { "name": "Antananarivo" },
+      { "name": "Lilongwe" },
+      { "name": "Bamako" },
+      { "name": "Rabat" },
+      { "name": "Nouakchott" },
+      { "name": "Port Louis" },
+      { "name": "Dzaoudzi" },
+      { "name": "Maputo" },
+      { "name": "Windhoek" },
+      { "name": "Niamey" },
+      { "name": "Abuja" },
+      { "name": "Saint-Denis" },
+      { "name": "Kigali" },
+      { "name": "Jamestown" },
+      { "name": "São Tomé" },
+      { "name": "Dakar" },
+      { "name": "Victoria" },
+      { "name": "Freetown" },
+      { "name": "Mogadishu" },
+      { "name": "Khartoum" },
+      { "name": "Mbabane" },
+      { "name": "Pretoria" },
+      { "name": "Dodoma" },
+      { "name": "N'Djamena" },
+      { "name": "Lomé" },
+      { "name": "Tunis" },
+      { "name": "Kampala" },
+      { "name": "Al-Ayun" },
+      { "name": "Lusaka" },
+      { "name": "Harare" }
+    ]
+	},
+  {
+  	"name": "Delstater i USA",
+  	"item": [
+      { "name": "Alabama" },
+      { "name": "Alaska" },
+      { "name": "Arizona" },
+      { "name": "Arkansas" },
+      { "name": "Colorado" },
+      { "name": "Connecticut" },
+      { "name": "Delaware" },
+      { "name": "Florida" },
+      { "name": "Georgia" },
+      { "name": "Idaho" },
+      { "name": "Hawaii" },
+      { "name": "Illinois" },
+      { "name": "Indiana" },
+      { "name": "Iowa" },
+      { "name": "California" },
+      { "name": "Kansas" },
+      { "name": "Kentucky" },
+      { "name": "Louisiana" },
+      { "name": "Maine" },
+      { "name": "Maryland" },
+      { "name": "Massachusetts" },
+      { "name": "Michigan" },
+      { "name": "Minnesota" },
+      { "name": "Mississippi" },
+      { "name": "Missouri" },
+      { "name": "Montana" },
+      { "name": "Nebraska" },
+      { "name": "Nevada" },
+      { "name": "New Hampshire" },
+      { "name": "New Jersey" },
+      { "name": "New Mexico" },
+      { "name": "New York" },
+      { "name": "North Carolina" },
+      { "name": "North Dakota" },
+      { "name": "Ohio" },
+      { "name": "Oklahoma" },
+      { "name": "Oregon" },
+      { "name": "Pennsylvania" },
+      { "name": "Rhode Island" },
+      { "name": "South Carolina" },
+      { "name": "South Dakota" },
+      { "name": "Tennessee" },
+      { "name": "Texas" },
+      { "name": "Utah" },
+      { "name": "Vermont" },
+      { "name": "Virginia" },
+      { "name": "Washington" },
+      { "name": "West Virginia" },
+      { "name": "Wisconsin" },
+      { "name": "Wyoming" }
+    ]
+  },
+   {
+   	"name": "Reserverade ord i C#",
+   	"item": [
+      { "name": "abstract" },
+      { "name": "as" },
+      { "name": "base" },
+      { "name": "bool" },
+      { "name": "break" },
+      { "name": "byte" },
+      { "name": "case" },
+      { "name": "catch" },
+      { "name": "char" },
+      { "name": "checked" },
+      { "name": "class" },
+      { "name": "const" },
+      { "name": "continue" },
+      { "name": "decimal" },
+      { "name": "default" },
+      { "name": "delegate" },
+      { "name": "do" },
+      { "name": "double" },
+      { "name": "else" },
+      { "name": "enum" },
+      { "name": "event" },
+      { "name": "explicit" },
+      { "name": "extern" },
+      { "name": "FALSE" },
+      { "name": "finally" },
+      { "name": "fixed" },
+      { "name": "float" },
+      { "name": "for" },
+      { "name": "foreach" },
+      { "name": "goto" },
+      { "name": "if" },
+      { "name": "implicit" },
+      { "name": "in" },
+      { "name": "int" },
+      { "name": "interface" },
+      { "name": "internal" },
+      { "name": "is" },
+      { "name": "lock" },
+      { "name": "long" },
+      { "name": "namespace" },
+      { "name": "new" },
+      { "name": "null" },
+      { "name": "object" },
+      { "name": "operator" },
+      { "name": "out" },
+      { "name": "override" },
+      { "name": "params" },
+      { "name": "private" },
+      { "name": "protected" },
+      { "name": "public" },
+      { "name": "readonly" },
+      { "name": "ref" },
+      { "name": "return" },
+      { "name": "sbyte" },
+      { "name": "sealed" },
+      { "name": "short" },
+      { "name": "sizeof" },
+      { "name": "stackalloc" },
+      { "name": "static" },
+      { "name": "string" },
+      { "name": "struct" },
+      { "name": "switch" },
+      { "name": "this" },
+      { "name": "throw" },
+      { "name": "TRUE" },
+      { "name": "try" },
+      { "name": "typeof" },
+      { "name": "uint" },
+      { "name": "ulong" },
+      { "name": "unchecked" },
+      { "name": "unsafe" },
+      { "name": "ushort" },
+      { "name": "using" },
+      { "name": "virtual" },
+      { "name": "void" },
+      { "name": "volatile" },
+      { "name": "while" }
+    ]
+   },
+	 {
+	 	"name": "Tunnelbanestationer",
+	 	"item": [
+      { "name": "Abrahamsberg" },
+      { "name": "Akalla" },
+      { "name": "Alby" },
+      { "name": "Alvik" },
+      { "name": "Aspudden" },
+      { "name": "Axelsberg" },
+      { "name": "Bagarmossen" },
+      { "name": "Bandhagen" },
+      { "name": "Bergshamra" },
+      { "name": "Björkhagen" },
+      { "name": "Blackeberg" },
+      { "name": "Blåsut" },
+      { "name": "Bredäng" },
+      { "name": "Brommaplan" },
+      { "name": "Danderyds sjukhus" },
+      { "name": "Duvbo" },
+      { "name": "Enskede gård" },
+      { "name": "Farsta" },
+      { "name": "Farsta Strand" },
+      { "name": "Fittja" },
+      { "name": "Fridhemsplan" },
+      { "name": "Fruängen" },
+      { "name": "Gamla stan" },
+      { "name": "Globen" },
+      { "name": "Gubbängen" },
+      { "name": "Gullmarsplan" },
+      { "name": "Gärdet" },
+      { "name": "Hagsätra" },
+      { "name": "Hallonbergen" },
+      { "name": "Hallunda" },
+      { "name": "Hammarbyhöjden" },
+      { "name": "Hjulsta" },
+      { "name": "Hornstull" },
+      { "name": "Husby" },
+      { "name": "Huvudsta" },
+      { "name": "Hägerstensåsen" },
+      { "name": "Hässelby gård" },
+      { "name": "Hässelby strand" },
+      { "name": "Högdalen" },
+      { "name": "Hökarängen" },
+      { "name": "Hötorget" },
+      { "name": "Islandstorget" },
+      { "name": "Johannelund" },
+      { "name": "Karlaplan" },
+      { "name": "Kista" },
+      { "name": "Kristineberg" },
+      { "name": "Kungsträdgården" },
+      { "name": "Kymlinge" },
+      { "name": "Kärrtorp" },
+      { "name": "Liljeholmen" },
+      { "name": "Mariatorget" },
+      { "name": "Masmo" },
+      { "name": "Medborgarplatsen" },
+      { "name": "Midsommarkransen" },
+      { "name": "Mälarhöjden" },
+      { "name": "Mörby centrum" },
+      { "name": "Norsborg" },
+      { "name": "Näckrosen" },
+      { "name": "Odenplan" },
+      { "name": "Rinkeby" },
+      { "name": "Rissne" },
+      { "name": "Ropsten" },
+      { "name": "Råcksta" },
+      { "name": "Rådhuset" },
+      { "name": "Rådmansgatan" },
+      { "name": "Rågsved" },
+      { "name": "S:t Eriksplan" },
+      { "name": "Sandsborg" },
+      { "name": "Skanstull" },
+      { "name": "Skarpnäck" },
+      { "name": "Skogskyrkogården" },
+      { "name": "Skärholmen" },
+      { "name": "Skärmarbrink" },
+      { "name": "Slussen" },
+      { "name": "Sockenplan" },
+      { "name": "Solna centrum" },
+      { "name": "Stadion" },
+      { "name": "Stadshagen" },
+      { "name": "Stora mossen" },
+      { "name": "Stureby" },
+      { "name": "Sundbybergs centrum" },
+      { "name": "Svedmyra" },
+      { "name": "Sätra" },
+      { "name": "T-centralen" },
+      { "name": "Tallkrogen" },
+      { "name": "Tekniska högskolan" },
+      { "name": "Telefonplan" },
+      { "name": "Tensta" },
+      { "name": "Thorildsplan" },
+      { "name": "Universitetet" },
+      { "name": "Vreten" },
+      { "name": "Vårberg" },
+      { "name": "Vårby gård" },
+      { "name": "Vällingby" },
+      { "name": "Västertorp" },
+      { "name": "Västra skogen" },
+      { "name": "Zinkensdamm" },
+      { "name": "Åkeshov" },
+      { "name": "Ängbyplan" },
+      { "name": "Örnsberg" },
+      { "name": "Östermalmstorg" }
+    ]
+	 },
+	{
+		"name": "Oscar-winning movies",
+		"item": [
+      { "name": "Argo" },
+      { "name": "The Artist" },
+      { "name": "The King's Speech" },
+      { "name": "The Hurt Locker" },
+      { "name": "Slumdog Millionaire" },
+      { "name": "No Country for Old Men" },
+      { "name": "The Departed" },
+      { "name": "Crash" },
+      { "name": "Million Dollar Baby" },
+      { "name": "The Return of the King" },
+      { "name": "Chicago" },
+      { "name": "A Beautiful Mind" },
+      { "name": "Gladiator" },
+      { "name": "American Beauty" },
+      { "name": "Shakespeare in Love" },
+      { "name": "Titanic" },
+      { "name": "The English Patient" },
+      { "name": "Braveheart" },
+      { "name": "Forrest Gump" },
+      { "name": "Schindler's List" },
+      { "name": "Unforgiven" },
+      { "name": "The Silence of the Lambs" },
+      { "name": "Dances with Wolves" },
+      { "name": "Driving miss Daisy" },
+      { "name": "Rain Man" },
+      { "name": "The Last Emperor" },
+      { "name": "Platoon" },
+      { "name": "Out of Africa" },
+      { "name": "Amadeus" },
+      { "name": "Terms of Endearment" },
+      { "name": "Gandhi" },
+      { "name": "Chariots of Fire" },
+      { "name": "Ordinary People" },
+      { "name": "Kramer vs. Kramer" },
+      { "name": "Deer Hunter" },
+      { "name": "Annie Hall" },
+      { "name": "Rocky" },
+      { "name": "One Flew Over the Cuckoo's Nest" },
+      { "name": "The Godfather Part II" },
+      { "name": "The Sting" },
+      { "name": "The Godfather" },
+      { "name": "The French Connection" },
+      { "name": "Patton" },
+      { "name": "Midnight Cowboy" },
+      { "name": "Oliver!" },
+      { "name": "In the Heat of the Night" },
+      { "name": "A Man for All Seasons" },
+      { "name": "Sound of Music" },
+      { "name": "My Fair Lady" },
+      { "name": "Tom Jones" },
+      { "name": "Lawrence of Arabia" },
+      { "name": "West Side Story" },
+      { "name": "The Apartment)" },
+      { "name": "Ben-Hur" },
+      { "name": "Gigi" },
+      { "name": "The Bridge on the River Kwai" },
+      { "name": "Around the World in Eighty Days" },
+      { "name": "Marty" },
+      { "name": "On the Waterfront" },
+      { "name": "From Here to Eternity" },
+      { "name": "The Greatest Show on Earth" },
+      { "name": "An american in Paris" },
+      { "name": "All About Eve" },
+      { "name": "All the King's Men" },
+      { "name": "Hamlet" },
+      { "name": "Gentleman's Agreement" },
+      { "name": "The Best Years of Our Lives)" },
+      { "name": "The Lost Weekend" },
+      { "name": "Going My Way" },
+      { "name": "Casablanca" },
+      { "name": "Mrs. Miniver" },
+      { "name": "How green was my valley" },
+      { "name": "Rebecca" },
+      { "name": "Gone with the Wind" },
+      { "name": "You Can't Take It with You" },
+      { "name": "The Life of Emile Zola" },
+      { "name": "The Great Ziegfeld" },
+      { "name": "Mutiny on the Bounty" },
+      { "name": "It Happened One Night" },
+      { "name": "Cavalcade" },
+      { "name": "Grand Hotel" },
+      { "name": "Cimarron" },
+      { "name": "All Quiet on the Western Front" },
+      { "name": "The Broadway Melody" },
+      { "name": "Wings" }
     ]
 	}
 ];
