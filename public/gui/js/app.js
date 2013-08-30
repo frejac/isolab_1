@@ -28,6 +28,8 @@ App.GameScreen = (function () {
 			this.truckerChat	= $('.trucker-chat');
 
 			this.bind();
+//
+//			this.joinGameScreen.fadeIn( 250 );
 		},
 
 		bind: function () {
@@ -53,7 +55,7 @@ App.GameScreen = (function () {
 
 				this.joinGameScreen.fadeOut( 250 );
 				this.listName.delay( 250 ).fadeIn( 250 );
-				this.gameScreen.delay( 1500 ).fadeIn( 250 );
+				this.gameScreen.delay( 1000 ).fadeIn( 250 );
 			}
 		},
 
@@ -151,7 +153,7 @@ App.GameScreen = (function () {
 			if(this.isConnected !== true) {
 
 				var that = this;
-				this.socket = io.connect('http://isolabs.isotop.se:10151');
+				this.socket = io.connect('http://isolabs.isotop.segit:10151');
 				// Called when client is connected to server
 				this.socket.on('connect', function () {
 
