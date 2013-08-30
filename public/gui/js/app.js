@@ -151,7 +151,7 @@ App.GameScreen = (function () {
 			if(this.isConnected !== true) {
 
 				var that = this;
-				this.socket = io.connect('http://localhost:10151');
+				this.socket = io.connect('http://isolabs.isotop.se:10151');
 				// Called when client is connected to server
 				this.socket.on('connect', function () {
 
