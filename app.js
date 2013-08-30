@@ -22,7 +22,7 @@ app.get('/admin', function (req, res) {
  	countdown--;
  	if (countdown == 0) {
  		playa = game.players[game.turn];
- 		playa.active == false;
+ 		playa.active = false;
  		nextTurn();
  		sendGameWithStatus(playa.nick + " was slow. Too slow! " + playa.nick + " is out!");
  		checkForWinner();
