@@ -10,10 +10,9 @@ socket.on('message', function (data) {
  	$(".stats").html("");
 	$.each(data.players, function (i, v) {
 		var div = $('div');
-		div.addClass("player" + i);
 		div.html(v.nick + "<br/>");
 		$.each(v.items, function (i, v) {
-			div.append("  " + v + "<br/>");
+			div.append("&nbsp;&nbsp;" + v + "<br/>");
 		});
 		$(".stats").append(div);
 	});
@@ -51,18 +50,20 @@ socket.on('message', function (data) {
 	});
 </script>
 
-<form onsubmit="return send_message();" action="">
-
-  <select name="listselect" id="listselect"></select>
-  <input type="submit" value="Send" />
-
-</form>
 <div class="start-game">
 	<button>START GAME</button>
 </div>
 <div class="reset-game">
 	<button>RESET GAME</button>
 </div>
+
+<form onsubmit="return send_message();" action="">
+
+  <select name="listselect" id="listselect"></select>
+  <input type="submit" value="Send" />
+
+</form>
+
 
 
 <div class="stats"></div>
