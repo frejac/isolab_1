@@ -25,7 +25,41 @@ body {
 	background-color: #000000;
 
 }
+input.rounded {
 
+	background-color:#111;
+	color: @truckerColor;
+	border: 1px solid @truckerColor;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+	border-radius: 7px;
+	-moz-box-shadow: 0px -2px 3px #333;
+	-webkit-box-shadow: 0px -2px 3px #333;
+	box-shadow: 0px -2px 3px #333;
+	font-size: 1em;
+	padding: 4px 7px;
+	outline: 0;
+	-webkit-appearance: none;
+	height: 2.5em;
+}
+
+input.rounded:focus {
+	border-color: @activePlayerColor;
+}
+
+button {
+	background-color: #333;
+	color:@activePlayerColor;
+	border: 1px solid @truckerColor;
+	font-size: 1em;
+	padding: 1em;
+	border-radius: 50px;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+}
+//
+// COLORS
+//
 @truckerColor:#016fde;
 @activePlayerColor:#a3d771;
 @playerLostColor:#f388ae;
@@ -39,6 +73,10 @@ body {
 }
 .player-turn {
 	color:@activePlayerColor;
+}
+
+.logo-img {
+	margin-right: 0em	;
 }
 
 .app {

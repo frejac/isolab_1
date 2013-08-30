@@ -98,11 +98,18 @@ App.GameScreen = (function () {
 			var message = $('input[name="message"]');
 			var nick = this.nickName;
 
-			//	Simple validation
-			if (nick.value == '') {
-				alert('You must enter your nick!');
-				return false;
+
+			if( message.val().length < 1 ) {
+
+				alert('You must enter your answer');
+				return;
 			}
+
+			//	Simple validation
+//			if (nick.value == '') {
+//				alert('You must enter your nick!');
+//				return false;
+//			}
 
 			//	Send the message to the server
 			this.socket.emit('message', { nick: nick.val(), message: message.val() });
@@ -125,15 +132,18 @@ App.GameScreen = (function () {
 		join: function () {
 			this.nickName = $('input[name="nickname"]');
 
-			this.showScreen("GAME");
+			if( this.nickName.val().length > 0 ) {
 
-			this.connect();
+				this.showScreen("GAME");
+				this.connect();
+			} else {
+				alert('You must enter your nick!');
+			}
 		},
 
 		connect: function () {
 
 			if(this.isConnected !== true) {
-
 
 				var that = this;
 				this.socket = io.connect('http://localhost:10151');
@@ -152,7 +162,7 @@ App.GameScreen = (function () {
 		},
 
 		onTruckerTimer: function (data) {
-			window.console.log('onTruckerTimer ', data);
+//			window.console.log('onTruckerTimer ', data);
 			var activePlayerStatus =  $('.data-table').find('.player-turn')[1],
 				time = Number(data.time) || 30;
 
