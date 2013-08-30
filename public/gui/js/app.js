@@ -47,8 +47,13 @@ App.GameScreen = (function () {
 		showScreen: function ( screen ) {
 			if( screen == "GAME" ) {
 
-				this.gameScreen.removeClass('inactive');
-				this.joinGameScreen.addClass('inactive');
+//				this.gameScreen.removeClass('inactive');
+//				this.joinGameScreen.addClass('inactive');
+
+
+				this.joinGameScreen.fadeOut( 250 );
+				this.listName.delay( 250 ).fadeIn( 250 );
+				this.gameScreen.delay( 1500 ).fadeIn( 250 );
 			}
 		},
 
