@@ -12,6 +12,7 @@ App.GameScreen = (function () {
 //			viewDataURL 	= holder.data("view-data-url");
 
 			this.EVENT_START_GAME 	= "StartGame";
+			this.EVENT_RESET_GAME 	= "RESET";
 			this.EVENT_NEW_USER 	= "NewUser";
 
 			this.test("wohoo");
@@ -24,24 +25,19 @@ App.GameScreen = (function () {
 			this.startGameButton= $('.start-game');
 			this.listInfo		= $('.list-info');
 
-//			this.gameScreen.addClass(".inactive");
-
-
-			window.console.log( this.joinGameScreen, this.gameScreen );
-
-
 			this.bind();
 		},
 
 		bind: function () {
 
 			$('.submit-name').bind( 'click', $.proxy( this.join, this ) );
-			$('.submit-answer').bind( 'click', $.proxy( this.sendMessage, this ) );
+			$('.submit-answer').bind( 'click', $.proxy( this.sendAnswer, this ) );
 			$('.start-game').bind( 'click', $.proxy( this.startGame, this ) );
+			$('.reset-game').bind( 'click', $.proxy( this.resetGame, this ) );
 		},
 
 		test: function ( a ) {
-			window.console.log('test ', a);
+//			window.console.log('test ', a);
 		},
 		//
 		// GAME
@@ -64,7 +60,7 @@ App.GameScreen = (function () {
 				index=0;
 
 			$.each( players, function( key, value ) {
-				window.console.log(value);
+//				window.console.log(value);
 
 				cssClass = "";
 				if(value.active == false ) {
@@ -84,26 +80,31 @@ App.GameScreen = (function () {
 		//
 		// SERVER RELATED...
 		//
-		sendMessage: function ( e ) {
+		sendAnswer: function ( e ) {
 			e.preventDefault();
 
 			var message = $('input[name="message"]');//document.getElementById('message');
 			var nick = this.nickName;//document.getElementById('nick');
-			window.console.log('nick: ', nick.val());
-			window.console.log('mess: ', message.val());
 
-			// Simple validation
+//			Simple validation
 			if (nick.value == '') {
 				alert('You must enter your nick!');
-				console.log('hej');
 				return false;
 			}
 
-			// Send the message to the server
+//			Send the message to the server
 			this.socket.emit('message', { nick: nick.val(), message: message.val() });
+//			this.sendMessage( message );
 
 			// Clear the input
 			message.val('');
+		},
+
+		sendMessage: function ( message, optionalNickname ) {
+
+			var nick = optionalNickname || this.nickName.val();
+			// Send the message to the server
+			this.socket.emit('message', { nick: nick, message: message });
 
 			return false;
 		},
@@ -121,20 +122,20 @@ App.GameScreen = (function () {
 
 			if(this.isConnected !== true) {
 
-				window.console.log('connect');
+
 				var that = this;
 				this.socket = io.connect('http://localhost:10151');
 				// Called when client is connected to server
 				this.socket.on('connect', function () {
-					console.log('socket connected');
 
 					// Send the username to the server
-					that.socket.emit('message', { nick: that.nickName.val(), message:that.EVENT_NEW_USER });
+					//that.socket.emit('message', { nick: that.nickName.val(), message:that.EVENT_NEW_USER });
+					that.sendMessage( that.EVENT_NEW_USER );
 
 					// Called when client receives message from server
 					that.socket.on('message', function (data) {
 						// Log to browser console
-						console.log('socket on', data);
+//						console.log('socket on', data);
 
 						that.gameData = data;
 						that.updateGame();
@@ -151,8 +152,12 @@ App.GameScreen = (function () {
 		},
 
 		startGame: function () {
-			window.console.log('startGame');
-			this.socket.emit('message', { nick: this.nickName.val(), message: this.EVENT_START_GAME });
+			this.sendMessage( this.EVENT_START_GAME );
+		},
+
+		resetGame: function () {
+			this.sendMessage( this.EVENT_RESET_GAME, "ADMIN" );
+
 		}
 	};
 });
