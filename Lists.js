@@ -112,7 +112,7 @@
       { "name": "Virginia" },
       { "name": "Washington" },
       { "name": "West Virginia" },
-      { "name": "Wisconsin" },
+      { "name": "Wisconsin" },		
       { "name": "Wyoming" }
     ]
   },
