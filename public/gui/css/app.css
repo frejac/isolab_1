@@ -156,6 +156,9 @@ button {
 .trucker-chat-holder {
   width: 100%;
 }
+.trucker-chat-holder .trucker-chat {
+  color: #a3d771;
+}
 .game-screen .player-list .data-table {
   width: 100%;
   height: 100%;
