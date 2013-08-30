@@ -92,34 +92,41 @@ a img {
   border: 0;
 }
 body {
-  font: 15px arial, sans-serif;
-  font-size: 0.875em;
+  font: 1em arial, sans-serif;
+  font-weight: 300;
   color: #ffffff;
-  background-color: #333333;
+  background-color: #000000;
 }
 .inactive {
   display: none;
 }
 .player-lost {
-  color: #CC0000;
+  color: #f388ae;
 }
 .player-turn {
-  color: #00CC00;
+  color: #a3d771;
 }
 .app {
-  background-color: #cfcfcf;
+  padding: 1em;
+  background-color: #000000;
+}
+.app .header strong {
+  font-size: 1.5em;
 }
 .centered-box {
   margin: 0 auto;
   text-align: center;
-  width: 50%;
 }
 .trucker-status {
   margin: 1em 1em;
-  color: #5555cc;
+  color: #016fde;
+}
+.trucker-chat-holder {
+  width: 100%;
 }
 .game-screen .player-list .data-table {
   width: 100%;
+  height: 100%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -127,7 +134,7 @@ body {
   text-align: right;
 }
 .game-screen .player-list .data-table td {
-  padding: 1em 0.5em;
+  padding: 0.5em 0.5em;
   width: 50%;
   text-align: left;
 }
@@ -143,8 +150,23 @@ body {
 .answer-form .submit-answer {
   display: inline;
 }
-table,
-tr,
-td {
-  border: 1px solid black;
+.list-info {
+  font-size: 1.5em;
+}
+.list-info .data-table {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.list-info .data-table td:first-child {
+  text-align: right;
+}
+.list-info .data-table td {
+  vertical-align: sub;
+  padding: 0em 0.5em;
+  width: 50%;
+  text-align: left;
+}
+.list-info strong {
+  font-size: 2.5em;
 }

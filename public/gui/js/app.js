@@ -25,6 +25,7 @@ App.GameScreen = (function () {
 			this.startGameButton= $('.start-game');
 			this.listInfo		= $('.list-info');
 			this.listName		= $('.list-name');
+			this.truckerChat	= $('.trucker-chat');
 
 			this.bind();
 		},
@@ -60,6 +61,8 @@ App.GameScreen = (function () {
 				cssClass = "",
 				index=0;
 
+			html += ('<tr><td class="trucker-status"><strong>Player</strong></td><td class="trucker-status"><strong>Status</strong></td></tr>');
+
 			$.each( players, function( key, value ) {
 //				window.console.log(value);
 
@@ -70,6 +73,7 @@ App.GameScreen = (function () {
 					cssClass = "player-turn";
 				}
 
+
 				html += ('<tr><td class="'+cssClass+'">'+ value.nick +'</td><td class="'+cssClass+'">'+ value.lastmessage +'</td></tr>');
 
 				index+=1;
@@ -77,10 +81,13 @@ App.GameScreen = (function () {
 
 			html+= '</table>';
 
+			// update texts
+			this.listInfo.html( '<table class="data-table"><tr><td><strong>'+ listinfo.taken +'</strong></td><td> of </td></tr><tr><td><strong>'+ listinfo.length +'</strong></td><td> words used</td></tr></table>' );//listinfo.taken + ' / ' + listinfo.length );
 			this.playerList.html( html );
 
-			this.listInfo.html( listinfo.taken + ' / ' + listinfo.length );
+			this.truckerChat.html(data.status);
 			this.listName.html( 'Now playing \"' + listinfo.name + '\"' );
+
 		},
 		//
 		// SERVER RELATED...
@@ -88,18 +95,19 @@ App.GameScreen = (function () {
 		sendAnswer: function ( e ) {
 			e.preventDefault();
 
-			var message = $('input[name="message"]');//document.getElementById('message');
-			var nick = this.nickName;//document.getElementById('nick');
+			var message = $('input[name="message"]');
+			var nick = this.nickName;
 
-//			Simple validation
+			//	Simple validation
 			if (nick.value == '') {
 				alert('You must enter your nick!');
 				return false;
 			}
 
-//			Send the message to the server
+			//	Send the message to the server
 			this.socket.emit('message', { nick: nick.val(), message: message.val() });
-//			this.sendMessage( message );
+
+//			this.sendMessage( message ); // WHY NOT WORK???
 
 			// Clear the input
 			message.val('');
@@ -116,7 +124,6 @@ App.GameScreen = (function () {
 
 		join: function () {
 			this.nickName = $('input[name="nickname"]');
-			//$('.nick-name').html(this.nickName.val());
 
 			this.showScreen("GAME");
 
@@ -134,26 +141,34 @@ App.GameScreen = (function () {
 				this.socket.on('connect', function () {
 
 					// Send the username to the server
-					//that.socket.emit('message', { nick: that.nickName.val(), message:that.EVENT_NEW_USER });
 					that.sendMessage( that.EVENT_NEW_USER );
 
 					// Called when client receives message from server
-					that.socket.on('message', function (data) {
-						// Log to browser console
-						console.log('socket on', data);
-
-						that.gameData = data;
-						that.updateGame();
-						// Add the message to the ul list
-						var span = document.createElement('span');
-						span.innerHTML = data.status;
-//							span.innerHTML = data.nick + " says: " + data.message;
-						document.getElementById('chat').appendChild(span);
-					});
-
+					that.socket.on('message', $.proxy(that.onTruckerData, that) );
+					that.socket.on('timer', $.proxy(that.onTruckerTimer, that) );
 				});
 				this.isConnected = true;
 			}
+		},
+
+		onTruckerTimer: function (data) {
+			window.console.log('onTruckerTimer ', data);
+			var activePlayerStatus =  $('.data-table').find('.player-turn')[1],
+				time = Number(data.time) || 30;
+
+			if (time < 10 ) {
+				time = '0'+time;
+			}
+
+			$(activePlayerStatus).text( '00:'+time );
+		},
+
+		onTruckerData: function (data) {
+
+//			console.log('onTruckerData ', data);
+
+			this.gameData = data;
+			this.updateGame();
 		},
 
 		startGame: function () {

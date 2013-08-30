@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 	<script src="http://localhost:10151/socket.io/socket.io.js"></script>
 	<script type="text/javascript" src="/gui/js/vendor/jquery-1.10.2.min.js"></script>
 	<!--<script src="/gui/js/socket_io.js"></script>-->
@@ -12,8 +13,8 @@
 
 	<div class="app centered-box">
 
-		<div class="trucker-status">
-			Master of the list
+		<div class="trucker-status header">
+			<strong>Master of the list</strong>
 			<div class="list-name"></div>
 		</div>
 
@@ -33,26 +34,31 @@
 
 			<div class="player-list"></div>
 
-			<div class="trucker-status">TruckerFun says:</div>
-			<div class="trucker-status" id="chat"></div>
+			<div class="centered-box">
+				<div class="trucker-status">TruckerFun says:</div>
+				<div class="trucker-chat-holder centered-box">
+					<div class="trucker-chat trucker-status"></div>
+				</div>
+			</div>
+			<div class="list-info trucker-status"></div>
 
 			<div class="answer-form">
 				<form class="answer-form" action=""></form>
-					<input type="text" value="" name="message" id="message" placeholder="answer" />
+				<input type="text" value="" name="message" id="message" placeholder="answer" />
 				</form>
 				<div class="submit-answer">
 					<button>send answer</button>
 				</div>
 			</div>
+
+
+
 			<div class="start-game">
 				<button>START GAME</button>
 			</div>
 			<div class="reset-game">
 				<button>RESET GAME</button>
 			</div>
-			<div class="list-info"></div>
-
-
 		</div>
 
 		<div class="end-screen"></div>
