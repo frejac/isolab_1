@@ -16,20 +16,21 @@ app.get('/admin', function (req, res) {
 
  var countdown = 30;
  setInterval(function () {
- 	
+
  	if (!game.gameon)
  		return;
  	countdown--;
- 	if (countdown == 0) {
+ 	if (countdown <= 0) {
  		playa = game.players[game.turn];
  		playa.active = false;
  		nextTurn();
  		sendGameWithStatus(playa.nick + " was slow. Too slow! " + playa.nick + " is out!");
  		checkForWinner();
  	}
+ 	
 
  	console.log(countdown);
- 	io.sockets.emit('timer', { time : countdown });
+ 	io.sockets.emit('timer', { time: countdown });
  }, 1000);
 
 // Called when client connects
