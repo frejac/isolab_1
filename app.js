@@ -36,6 +36,9 @@ app.get('/admin', function (req, res) {
 // Called when client connects
  io.sockets.on('connection', function (client) {
  	client.on('listselect', function (data) {
+ 		if (!data)
+ 			return;
+
  		list = data;
  		items = list.items;
  		game.listinfo.name = list.name;
@@ -59,7 +62,7 @@ app.get('/admin', function (req, res) {
  				};
  				return;
  			}
-			
+
  		}
 
  		if (!list)
@@ -119,7 +122,7 @@ app.get('/admin', function (req, res) {
  				for (j = 0; j < game.players.length; j++) {
  					if (contains(game.players[j].items, data.message.toLowerCase())) {
  						player.items.push(data.message.toLowerCase());
-						player.active = false;
+ 						player.active = false;
  						player.lastmessage = data.message;
  						taken = true;
  						sendGameWithStatus(data.nick + " said " + data.message + ", but that is already taken by " + game.players[j].nick + ". " + player.nick + " is out.");
