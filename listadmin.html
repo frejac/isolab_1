@@ -11,7 +11,7 @@ socket.on('message', function (data) {
 	$.each(data.players, function (i, v) {
 		var div = $('div');
 		div.addClass("player" + i);
-		div.html(player.nick + "<br/>");
+		div.html(v.nick + "<br/>");
 		$.each(v.items, function (i, v) {
 			div.append("  " + v + "<br/>");
 		});
