@@ -7,7 +7,7 @@ server.listen(10151);
 
 // Serve the index.html file
 app.get('/', function (req, res) {
-  res.sendfile(__dirname + '/index.html');
+  res.sendfile(__dirname + '/public/index.html');
 });
 
 app.get('/admin', function (req, res) {

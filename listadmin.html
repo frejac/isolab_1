@@ -5,18 +5,21 @@
 //  // Called when client is connected to server
 //  socket.on('connect', function () {
 
-//  	// Called when client receives message from server
-//  	socket.on('message', function (data) {
-//  		// Log to browser console
-//  		console.log(data);
-//  		// Add the message to the ul list
-//  		var li = document.createElement('li');
-//  		li.innerHTML = data.nick + " says: " + data.message;
-//  		document.getElementById('chat').appendChild(li);
-//  		alert(data.status);
-//  	});
+Called when client receives message from server
+socket.on('message', function (data) {
+ 	$(".stats").html("");
+	$.each(data.players, function (i, v) {
+		var div = $('div');
+		div.addClass("player" + i);
+		div.html(player.nick + "<br/>");
+		$.each(v.items, function (i, v) {
+			div.append("  " + v + "<br/>");
+		});
+		$(".stats").append(div);
+	});
+});
 
-//  });
+});
   
   function send_message () {
 
@@ -39,6 +42,12 @@
 				.append($('<option>', { value: i })
 				.text(v.name));
 		});
+		$('.start-game').click(function () {
+			socket.emit('message', {nick:"Adimn",message:"StartGame"});
+		});
+		$('.reset-game').click(function () {
+			socket.emit('message', { nick: "ADMIN", message: "RESET" });
+		});
 	});
 </script>
 
@@ -48,5 +57,12 @@
   <input type="submit" value="Send" />
 
 </form>
+<div class="start-game">
+	<button>START GAME</button>
+</div>
+<div class="reset-game">
+	<button>RESET GAME</button>
+</div>
 
-<ul id="chat"></ul>
+
+<div class="stats"></div>
